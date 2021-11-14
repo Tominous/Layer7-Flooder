@@ -554,7 +554,7 @@ function INIT(workerData) {
                     l7.firewall = STATE.firewall;
                     this.cback() // Start bypassing :: After bypassed start attacking using "ATTACK" function;
                 } else {
-                    //logger(STATE.firewalls.length);
+                    logger(STATE.firewalls.length);
                 }
             });
         }
