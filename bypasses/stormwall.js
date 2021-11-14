@@ -199,7 +199,7 @@ module.exports = function Stormwall() {
                     if (err || !res) {
                         return false;
                     }
-                    //console.log(cookie, body);
+                    console.log(cookie, body);
                     callback(cookie);
                 })
             });
