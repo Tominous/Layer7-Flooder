@@ -46,12 +46,12 @@ module.exports = function PipeGuard() {
                     }
                 }, (err, res, body) => {
                     if (res && res.request.headers.Cookie) {
-                        //console.log(res.request.headers.Cookie);
+                        console.log(res.request.headers.Cookie);
                         callback(res.request.headers.Cookie);
                     }
-                    /*if (err || !res || !body) {
+                    if (err || !res || !body) {
                         return false;
-                    }*/
+                    }
                 });
             })
         });
