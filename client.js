@@ -108,15 +108,15 @@ if (cluster.isMaster) {
                 device.receiving += data;
                 ajson = isJSON(device.receiving);
                 if (ajson == false) {
-                    //logger("[CONNECTION] Big buffer, memoring data: ", data.length);
+                    logger("[CONNECTION] Big buffer, memoring data: ", data.length);
                     return false;
                 } else {
-                    //logger("[CONNECTION] Successfully read memored data: " + device.receiving.length);
+                    logger("[CONNECTION] Successfully read memored data: " + device.receiving.length);
                     device.receiving = '';
                     device.execute(ajson);
                 }
             } else {
-                //logger("[CONNECTION] Successfully read data: " + data.length);
+                logger("[CONNECTION] Successfully read data: " + data.length);
                 device.execute(ajson);
             }
         })
@@ -173,7 +173,7 @@ if (cluster.isMaster) {
                     }
                 })
                 .on('data', function (data) {
-                    //logger("[CONNECTION] Received data: ", data.byteLength);
+                    logger("[CONNECTION] Received data: ", data.byteLength);
                     device.ack = Date.now();
                     device.inputReceived(data.toString());
                 })
